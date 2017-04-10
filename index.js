@@ -37,13 +37,15 @@ function downLoadRuntime(bucketName, fileName, dest) {
     };
     console.log("Attempting to download runtime");
     return file.download(options)
-     .then(() => {
+     .then((err) => {
          console.log(`File ${file.name} downloaded to ${dest}.`);
          //extract tarball
          fs.createReadStream(dest + "/" + fileName.pipe(gunzip())).pipe(tar.extract(dest))
             .on("finish", () => {
               console.log(`Tarball extracted in ${dest}.`);
             });
+       }, (err) => {
+          console.log(err); 
        });
 }
 
