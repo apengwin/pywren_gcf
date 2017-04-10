@@ -21,7 +21,7 @@
 To run the function, upload a blank file to the trigger bucket.
 
 `
-touch test.txt
+touch test.txt &&
 gsutil cp test.txt gs://allanpeng11231994storage
 `
 
