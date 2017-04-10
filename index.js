@@ -49,5 +49,5 @@ function downLoadRuntime(bucketName, fileName, dest) {
 
 // uploadFile(BUCKET, "./test.txt");
 exports.RUNTIMETEST = function (event, callback) {
-    downLoadRuntime(BUCKET, FILENAME, "./foo");
+    downLoadRuntime(BUCKET, FILENAME, "/tmp");
 };
