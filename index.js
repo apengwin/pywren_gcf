@@ -19,29 +19,29 @@ function uploadFile (bucketName, fileName) {
     });
 }
 
-function downLoadRuntime(bucketName, src, dest) {
+function downLoadRuntime(bucketName, fileName, dest) {
     const storage = Storage();
     const bucket = storage.bucket(bucketName);
-    const file = bucket.file(src);
+    const file = bucket.file(fileName);
 
-//    try {
-  //      if (!fs.statSync(dest).isDirectory) {
-   //         throw "Dest is not a directory"
- //       }
-//    } catch(err) {
- //       fs.mkdir(dest);
-//    }
+    try {
+        if (!fs.statSync(dest).isDirectory) {
+           throw "Dest is not a directory"
+        }
+    } catch(err) {
+       fs.mkdir(dest);
+    }
     const options = {
         // The path to which the file should be downloaded, e.g. "./file.txt"
-        destination:  "./" + src
+        destination: dest + "./" + fileName
     };
     console.log("Attempting to download runtime");
     return file.download(options)
      .then(() => {
          console.log(`File ${file.name} downloaded to ${dest}.`);
-         fs.createReadStream(dest + "/" + src).pipe(gunzip()).pipe(tar.extract(src))
+         fs.createReadStream(dest + "/" + fileName.pipe(gunzip()).pipe(tar.extract(dest))
             .on("finish", () => {
-              console.log(`Tarball extracted in ${src}.`);
+              console.log(`Tarball extracted in ${dest}.`);
             });
     });
 }
