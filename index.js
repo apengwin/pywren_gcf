@@ -40,11 +40,11 @@ function downLoadRuntime(bucketName, fileName, dest) {
      .then(() => {
          console.log(`File ${file.name} downloaded to ${dest}.`);
          //extract tarball
-         fs.createReadStream(dest + "/" + fileName.pipe(gunzip()).pipe(tar.extract(dest))
+         fs.createReadStream(dest + "/" + fileName.pipe(gunzip())).pipe(tar.extract(dest))
             .on("finish", () => {
               console.log(`Tarball extracted in ${dest}.`);
             });
-    });
+       });
 }
 
 // uploadFile(BUCKET, "./test.txt");
