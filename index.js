@@ -24,6 +24,7 @@ function downLoadRuntime(bucketName, fileName, dest) {
     const bucket = storage.bucket(bucketName);
     const file = bucket.file(fileName);
 
+    // Check if dest directory exists, and create it if it doesn't.
     try {
         if (!fs.statSync(dest).isDirectory) {
            throw "Dest is not a directory"
@@ -39,6 +40,7 @@ function downLoadRuntime(bucketName, fileName, dest) {
     return file.download(options)
      .then(() => {
          console.log(`File ${file.name} downloaded to ${dest}.`);
+         //extract tarball
          fs.createReadStream(dest + "/" + fileName.pipe(gunzip()).pipe(tar.extract(dest))
             .on("finish", () => {
               console.log(`Tarball extracted in ${dest}.`);
