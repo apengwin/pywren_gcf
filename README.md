@@ -10,7 +10,7 @@
 
 * `gcloud beta functions deploy RUNTIMETEST --source-url https://source.developers.google.com/p/pywrenTest/r/pytest --source-path / --trigger-bucket allanpeng11231994storage`
 
-* `source-url` is the link to the repo with the format `https://source.developers.google.com/p/<PROJECT_NAME>/r/<REPO_NAME>, and --source-path is the location of the function file in the repo directory.
+* `source-url` is the link to the repo with the format `https://source.developers.google.com/p/<PROJECT_NAME>/r/<REPO_NAME>`, and --source-path is the location of the function file in the repo directory.
 
 * `trigger-bucket` refers to the bucket whose events will trigger the function. 
 
