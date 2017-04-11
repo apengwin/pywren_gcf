@@ -34,4 +34,4 @@ May need to increase memory allocation through google cloud console.
 
 The runtime I'm using is over 300MB, and GCF defaults to 256MB, so it will kill your function if you don't raise it.
 
-(https://cloud.githubusercontent.com/assets/7637700/24933672/5c0e1250-1ecc-11e7-9443-0410e7dffb0b.png)
+![screen shot 2017-04-11 at 3 31 57 pm](https://cloud.githubusercontent.com/assets/7637700/24933672/5c0e1250-1ecc-11e7-9443-0410e7dffb0b.png)
