@@ -40,7 +40,11 @@ function downLoadRuntime(bucketName, fileName, dest) {
      .then((err) => {
          console.log(`File ${file.name} downloaded to ${dest}.`);
          //extract tarball
-         fs.createReadStream(dest + "/" + fileName).pipe(gunzip()).pipe(tar.extract(dest))
+         var temp = fs.createReadStream(dest + "/" + fileName);
+         console.log("here");
+         var temp2 = temp.pipe(gunzip());
+         console.log("there");
+         var temp3 = temp2.pipe(tar.extract(dest))
             .on("finish", () => {
               console.log(`Tarball extracted in ${dest}.`);
             });
@@ -54,4 +58,3 @@ exports.RUNTIMETEST = function (event, callback) {
     downLoadRuntime(BUCKET, FILENAME, "/tmp");
 //    child_process.execSync("ls -lha /tmp").toString("ascii");
 };
-

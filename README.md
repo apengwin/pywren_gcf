@@ -30,7 +30,7 @@ To view the output, execute `gcloud beta functions logs read --limit 10` in the 
 
 
 # Notes
-May need to increase memory allocation through google cloud console.
+May need to increase memory allocation through google cloud console. Also increase the alloted time or else it'll time out after 1 minute.
 
 The runtime I'm using is over 300MB, and GCF defaults to 256MB, so it will kill your function if you don't raise it.
 
