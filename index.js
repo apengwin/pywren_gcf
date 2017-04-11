@@ -40,6 +40,9 @@ function downLoadRuntime(bucketName, fileName, dest) {
      .then((err) => {
          console.log(`File ${file.name} downloaded to ${dest}.`);
          //extract tarball
+        child_process.execSync("tar -xvf /tmp/condaruntime.tar.xz");
+              console.log(`Tarball extracted in ${dest}.`);
+/*
          var temp = fs.createReadStream(dest + "/" + fileName);
          console.log("here");
          var temp2 = temp.pipe(gunzip());
@@ -48,6 +51,7 @@ function downLoadRuntime(bucketName, fileName, dest) {
             .on("finish", () => {
               console.log(`Tarball extracted in ${dest}.`);
             });
+*/
        }, (err) => {
           console.log(err); 
        });
@@ -58,3 +62,4 @@ exports.RUNTIMETEST = function (event, callback) {
     downLoadRuntime(BUCKET, FILENAME, "/tmp");
 //    child_process.execSync("ls -lha /tmp").toString("ascii");
 };
+    downLoadRuntime(BUCKET, FILENAME, "./");
