@@ -26,3 +26,8 @@ gsutil cp test.txt gs://allanpeng11231994storage
 `
 
 To view the output, execute `gcloud beta functions logs read --limit 10` in the terminal.
+
+
+
+# Notes
+May need to increase memory allocation through google cloud console
