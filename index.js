@@ -33,7 +33,7 @@ function downLoadRuntime(bucketName, fileName, dest) {
     }
     const options = {
         // The path to which the file should be downloaded, e.g. "./file.txt"
-        destination: dest + "./" + fileName
+        destination: dest + "/" + fileName
     };
     console.log("Attempting to download runtime");
     return file.download(options)
