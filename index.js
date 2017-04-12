@@ -62,4 +62,3 @@ exports.RUNTIMETEST = function (event, callback) {
     downLoadRuntime(BUCKET, FILENAME, "/tmp");
 //    child_process.execSync("ls -lha /tmp").toString("ascii");
 };
-    downLoadRuntime(BUCKET, FILENAME, "./");
