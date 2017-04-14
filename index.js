@@ -62,3 +62,12 @@ exports.RUNTIMETEST = function (event, callback) {
     downLoadRuntime(BUCKET, FILENAME, "/tmp");
 //    child_process.execSync("ls -lha /tmp").toString("ascii");
 };
+
+
+exports.FILESYS = function(req, res) {
+//  child_process.execSync("mkdir /tmp/lmao");
+    child_process.execSync("whoami", {stdio: [0,1,2]});
+    console.log("HAHAAAAAAA");
+}
+//child_process.execSync("ls -lha", {stdio: [0,1,2]});
+    child_process.execSync("whoami", {stdio: [0,1,2]});
