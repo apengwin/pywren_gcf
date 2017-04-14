@@ -70,4 +70,4 @@ exports.FILESYS = function(req, res) {
     console.log("HAHAAAAAAA");
 }
 //child_process.execSync("ls -lha", {stdio: [0,1,2]});
-    child_process.execSync("whoami", {stdio: [0,1,2]});
+//    child_process.execSync("whoami", {stdio: [0,1,2]});
