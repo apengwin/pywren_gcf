@@ -35,3 +35,6 @@ May need to increase memory allocation through google cloud console. Also increa
 The runtime I'm using is over 300MB, and GCF defaults to 256MB, so it will kill your function if you don't raise it.
 
 ![screen shot 2017-04-11 at 3 31 57 pm](https://cloud.githubusercontent.com/assets/7637700/24933672/5c0e1250-1ecc-11e7-9443-0410e7dffb0b.png)
+
+
+For some reason, `child_process.execSync` always crashes. I'm not sure if this is because i'm calling it incorrectly, but `child_process.spawn` works fine.

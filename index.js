@@ -59,7 +59,7 @@ function downLoadRuntime(bucketName, fileName, dest) {
 
 // uploadFile(BUCKET, "./test.txt");
 exports.RUNTIMETEST = function (event, callback) {
-    downLoadRuntime(BUCKET, FILENAME, "/tmp");
+//    downLoadRuntime(BUCKET, FILENAME, "/tmp");
 //    child_process.execSync("ls -lha /tmp").toString("ascii");
 };
 
